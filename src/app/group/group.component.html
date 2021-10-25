@@ -1,9 +1,19 @@
-<h2>{{group.title | uppercase}} Details</h2>
-<div><span>id: </span>{{group.id}}</div>
-<div>
-  <label for="title">Group title: </label>
-  <input id="title" [(ngModel)]="group.title" placeholder="title">
+<h2>My Groups</h2>
+<ul class="groups">
+  <li *ngFor="let group of groups"
+      [class.selected]="group === selectedGroup"
+      (click)="onSelect(group)">
+    <span class="badge">{{group.id}}</span> {{group.title}}
+  </li>
+</ul>
+
+<div *ngIf="selectedGroup">
+
+  <h2>{{selectedGroup.title | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedGroup.id}}</div>
+  <div>
+    <label for="group-name">Group name: </label>
+    <input id="group-name" [(ngModel)]="selectedGroup.title" placeholder="name">
+  </div>
+
 </div>
-<div><span>createDate: </span>{{group.createDate}}</div>
-
-

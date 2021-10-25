@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Group} from "./group";
+import {GROUPS} from "./mock-groups";
 
 @Component({
   selector: 'app-group',
@@ -8,15 +9,18 @@ import {Group} from "./group";
 })
 export class GroupComponent implements OnInit {
 
-  group: Group={
-    id:1,
-    title: 'Group 1',
-    createDate: "NOW"
-  };
+  groups = GROUPS;
+  selectedGroup?: Group;
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  onSelect(group: Group): void {
+    this.selectedGroup = group;
+  }
+
+
 
 }
