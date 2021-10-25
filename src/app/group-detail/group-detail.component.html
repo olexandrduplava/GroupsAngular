@@ -1,0 +1,10 @@
+<div *ngIf="group">
+
+  <h2>{{group.title | uppercase}} Details</h2>
+  <div><span>id: </span>{{group.id}}</div>
+  <div>
+    <label for="group-name">Group name: </label>
+    <input id="group-name" [(ngModel)]="group.title" placeholder="group">
+  </div>
+
+</div>
