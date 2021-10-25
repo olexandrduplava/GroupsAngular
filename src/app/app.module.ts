@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
 
 import { GroupComponent } from './group/group.component';
+import { GroupDetailComponent } from './group-detail/group-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GroupComponent
+    GroupComponent,
+    GroupDetailComponent
   ],
     imports: [
         BrowserModule,

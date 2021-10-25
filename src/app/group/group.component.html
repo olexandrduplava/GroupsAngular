@@ -1,4 +1,5 @@
 <h2>My Groups</h2>
+
 <ul class="groups">
   <li *ngFor="let group of groups"
       [class.selected]="group === selectedGroup"
@@ -7,13 +8,4 @@
   </li>
 </ul>
 
-<div *ngIf="selectedGroup">
-
-  <h2>{{selectedGroup.title | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedGroup.id}}</div>
-  <div>
-    <label for="group-name">Group name: </label>
-    <input id="group-name" [(ngModel)]="selectedGroup.title" placeholder="name">
-  </div>
-
-</div>
+<app-group-detail [group]="selectedGroup"></app-group-detail>
