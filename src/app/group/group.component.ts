@@ -13,20 +13,14 @@ import {MessageService} from "../service/message.service";
 export class GroupComponent implements OnInit {
 
   groups: Group[] = [];
-  selectedGroup?: Group;
 
-  constructor(private groupService: GroupService, private messageService: MessageService) { }
+  constructor(private groupService: GroupService) { }
 
   ngOnInit(): void {
     this.getGroups()
   }
 
-  onSelect(group: Group): void {
-    this.selectedGroup = group;
-    this.messageService.add(`GroupComponent: Selected group id=${group.id}`)
-  }
-
-  getGroups():void{
+  getGroups(): void{
     this.groupService.getGroups()
       .subscribe(groups => this.groups = groups);
   }

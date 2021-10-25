@@ -1,6 +1,7 @@
 <h2>Top Groups</h2>
 <div class="heroes-menu">
-  <a *ngFor="let group of groups">
+  <a *ngFor="let group of groups"
+  routerLink="/detail/{{group.id}}">
     {{group.title}}
   </a>
 </div>
