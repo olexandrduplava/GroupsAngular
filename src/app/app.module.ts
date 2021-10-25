@@ -6,12 +6,14 @@ import {FormsModule} from "@angular/forms";
 
 import { GroupComponent } from './group/group.component';
 import { GroupDetailComponent } from './group-detail/group-detail.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GroupComponent,
-    GroupDetailComponent
+    GroupDetailComponent,
+    MessagesComponent
   ],
     imports: [
         BrowserModule,

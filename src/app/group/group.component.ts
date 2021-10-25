@@ -3,6 +3,7 @@ import {Group} from "./group";
 import {GROUPS} from "./mock-groups";
 
 import {GroupService} from "../service/group.service";
+import {MessageService} from "../service/message.service";
 
 @Component({
   selector: 'app-group',
@@ -14,7 +15,7 @@ export class GroupComponent implements OnInit {
   groups: Group[] = [];
   selectedGroup?: Group;
 
-  constructor(private groupService: GroupService) { }
+  constructor(private groupService: GroupService, private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.getGroups()
@@ -22,6 +23,7 @@ export class GroupComponent implements OnInit {
 
   onSelect(group: Group): void {
     this.selectedGroup = group;
+    this.messageService.add(`GroupComponent: Selected group id=${group.id}`)
   }
 
   getGroups():void{
