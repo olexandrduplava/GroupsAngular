@@ -25,7 +25,8 @@ export class GroupComponent implements OnInit {
   }
 
   getGroups():void{
-    this.groups = this.groupService.getGroups();
+    this.groupService.getGroups()
+      .subscribe(groups => this.groups = groups);
   }
 
 
