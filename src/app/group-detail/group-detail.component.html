@@ -3,8 +3,13 @@
   <h2>{{group.title | uppercase}} Details</h2>
   <div><span>id: </span>{{group.id}}</div>
   <div>
-    <label for="group-name">Group name: </label>
+    <label for="group-name">Group title: </label>
     <input id="group-name" [(ngModel)]="group.title" placeholder="group">
+    <br>
+    <label for="group-date">Group Date: </label>
+    <input id="group-date" [(ngModel)]="group.createDate" placeholder="date">
+    <br>
+    <button (click)="update()">Update</button>
   </div>
 <button (click)="goBack()">go back</button>
 </div>

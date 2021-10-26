@@ -3,7 +3,6 @@ import { Group} from "../group/group";
 import {ActivatedRoute} from "@angular/router";
 import {Location} from "@angular/common";
 import {GroupService} from "../service/group.service";
-import {group} from "@angular/animations";
 
 @Component({
   selector: 'app-group-detail',
@@ -24,14 +23,22 @@ export class GroupDetailComponent implements OnInit {
     this.getGroup();
   }
 
-  getGroup(): void{
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.groupService.getGroup(id)
-      .subscribe(group=>this.group=group);
+    getGroup(): void{
+      const id = Number(this.route.snapshot.paramMap.get('id'));
+      this.groupService.getGroup(id)
+        .subscribe(group=>this.group=group);
     }
 
     goBack(): void{
     this.location.back();
+    }
+
+    //TODO update dont work
+    update(): void {
+      if(this.group){
+        this.groupService.updateGroup(this.group)
+          .subscribe(() => this.goBack());
+      }
     }
 }
 

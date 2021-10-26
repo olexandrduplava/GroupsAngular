@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
 
   getGroups():void{
     this.groupService.getGroups()
-      .subscribe(groups=>this.groups =groups.slice(1,5));
+      .subscribe(groups=>this.groups =groups.slice(0,3));
   }
 
 }
