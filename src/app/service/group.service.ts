@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import { Group} from "../group/group";
-import {GROUPS} from "../group/mock-groups";
 
 import {Observable, of} from "rxjs";
 import {MessageService} from "./message.service";
@@ -14,8 +13,7 @@ import {catchError, map, tap} from "rxjs/operators";
 })
 export class GroupService {
 
-  private groupsUrl = 'http://localhost:8090//group';
-
+  private groupsUrl = 'http://localhost:8090/group';
   constructor(
     private messageService: MessageService,
     private http: HttpClient
@@ -74,9 +72,41 @@ export class GroupService {
   };
 
   updateGroup(group: Group): Observable<any> {
-    return this.http.put(this.groupsUrl, group, this.httpOptions).pipe(
+    return this.http.put(this.groupsUrl + `/${group.id}`, group, this.httpOptions).pipe(
       tap(_ => this.log(`updated group id=${group.id}`)),
       catchError(this.handleError<any>('updateGroup'))
-    )
+    );
+  }
+
+  // updateGroup(group: Group): Observable<any> {
+  //   const url = `${this.groupsUrl}/${group.id}`;
+  //   return this.http.put(url, group, this.httpOptions);
+  // }
+
+
+  // updateGroup(group: Group): Observable<any> {
+  //   return this.http.put(this.groupsUrl, group, this.httpOptions).pipe(
+  //     tap(_ => this.log(`updated group id=${group.id}`)),
+  //     catchError(this.handleError<any>('updateGroup'))
+  //   )
+  // }
+
+  addGroup(group: Group): Observable<Group> {
+    const url = `${this.groupsUrl}`;
+    return this.http.post<Group>(url, group, this.httpOptions);
+    }
+
+  // addGroup(group: Group): Observable<Group> {
+  //   return this.http.post<Group>(this.groupsUrl, group, this.httpOptions).pipe(
+  //     tap((newGroup: Group) => this.log(`added group w/ id=${newGroup.id}`)),
+  //     catchError(this.handleError<Group>('addGroup'))
+  //   )
+  // }
+  deleteGroup(id: number): Observable<Group> {
+    const url = `${this.groupsUrl}/${id}`;
+    return this.http.delete<Group>(url, this.httpOptions).pipe(
+      tap(_ => this.log(`deleted group id=${id}`)),
+      catchError(this.handleError<Group>('delete Group'))
+    );
   }
 }

@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Group} from "./group";
-import {GROUPS} from "./mock-groups";
 
 import {GroupService} from "../service/group.service";
-import {MessageService} from "../service/message.service";
 
 @Component({
   selector: 'app-group',
@@ -26,4 +24,17 @@ export class GroupComponent implements OnInit {
   }
 
 
+  add(title: string): void {
+      title = title.trim();
+      if(!title) {return;}
+      this.groupService.addGroup({ title } as Group)
+        .subscribe(group => {
+          this.groups.push(group);
+        });
+  }
+
+  delete(group: Group): void {
+    this.groups = this.groups.filter(h=> h!== group);
+    this.groupService.deleteGroup(group.id).subscribe();
+  }
 }

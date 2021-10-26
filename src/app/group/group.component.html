@@ -5,6 +5,20 @@
     <a routerLink="/detail/{{group.id}}">
      <span class="badge">{{group.id}}</span> {{group.title}}
     </a>
+    <button class="delete" title="delete hero"
+            (click)="delete(group)">Delete</button>
   </li>
 </ul>
+
+
+
+<div>
+  <label for="new-hero">Group name: </label>
+  <input id="new-hero" #groupName />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button class="add-button" (click)="add(groupName.value); groupName.value=''">
+    Add group
+  </button>
+</div>
 
