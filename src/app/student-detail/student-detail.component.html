@@ -2,20 +2,27 @@
   <h2>{{student.firstName | uppercase}} Details</h2>
   <div><span>id: </span>{{student.id}}</div>
   <div>
+
     <label for="student-firstName">Student firstName: </label>
     <input id="student-firstName" [(ngModel)]="student.firstName" placeholder="firstName"/>
     <br>
+
     <label for="student-lastName">Student lastName: </label>
     <input id="student-lastName" [(ngModel)]="student.lastName" placeholder="lastName"/>
     <br>
+
     <label for="student-averageRank">Student averageRank: </label>
     <input id="student-averageRank" [(ngModel)]="student.averageRank" placeholder="averageRank"/>
     <br>
-    <label for="power">Student Group</label>
-    <select class="form-control" id="power" required>
-      <option></option>
-    </select>
+
+    <div class="form-group">
+      <label for="power">Group: </label>
+      <select class="form-control" id="power" required>
+        <option *ngFor="let group of groups" [value]="group.id">{{group.title}}</option>
+      </select>
+    </div>
     <br>
+
     <button (click)="update()">Update</button>
   </div>
   <button (click)="goBack()">go back</button>

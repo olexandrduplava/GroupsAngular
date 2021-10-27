@@ -1,7 +1,9 @@
+import {Group} from "../group/group";
+
 export interface Student {
-  id: number;
+  id?: number;
   firstName: string;
   lastName: string;
-  averageRank: number;
-  groupId: number;
+  averageRank?: number;
+  group: Group;
 }

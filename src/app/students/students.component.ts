@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Student} from "./student";
 import {StudentService} from "../service/student.service";
 import {Group} from "../group/group";
+import {GroupService} from "../service/group.service";
 
 @Component({
   selector: 'app-students',
@@ -12,10 +13,21 @@ export class StudentsComponent implements OnInit {
 
   students: Student[] = [];
 
-  constructor(private studentService: StudentService) { }
+  groups: Group[] = [];
+
+
+
+  constructor(private studentService: StudentService,
+              private groupService: GroupService) { }
 
   ngOnInit(): void {
     this.getStudents();
+    this.getGroups();
+  }
+
+  getGroups(): void{
+    this.groupService.getGroups()
+      .subscribe(groups => this.groups = groups);
   }
 
   getStudents(): void {
@@ -23,11 +35,16 @@ export class StudentsComponent implements OnInit {
       .subscribe(students => this.students = students);
   }
 
-  add(firstName: string, lastName: string): void {
+  add(firstName: string, lastName: string, groupId: number): void {
     firstName = firstName.trim();
-    lastName = lastName.trim()
+    lastName = lastName.trim();
     if(!firstName && !lastName) {return;}
-    this.studentService.addStudent({ firstName, lastName } as Student)
+
+    let student:Student = { firstName:firstName, lastName:lastName, group:this.groups.find(h=> h.id === groupId) as Group}
+    console.log(student,groupId)
+
+    this.studentService.addStudent(student)
+    // this.studentService.addStudent({ firstName, lastName, this.groups[0] } as Student)
       .subscribe(group => {
         this.students.push(group);
       });
@@ -35,6 +52,6 @@ export class StudentsComponent implements OnInit {
 
   delete(student: Student): void {
     this.students = this.students.filter(h=> h!== student);
-    this.studentService.deleteStudent(student.id).subscribe();
+    this.studentService.deleteStudent(student.id!).subscribe();
   }
 }

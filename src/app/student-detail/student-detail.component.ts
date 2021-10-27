@@ -3,6 +3,10 @@ import {Student} from "../students/student";
 import {ActivatedRoute} from "@angular/router";
 import {Location} from "@angular/common";
 import {StudentService} from "../service/student.service";
+import {Group} from "../group/group";
+
+
+import {GroupService} from "../service/group.service";
 
 
 @Component({
@@ -15,14 +19,28 @@ export class StudentDetailComponent implements OnInit {
   student: Student | undefined;
 
 
+  groups: Group[] = [];
+
+
+  getGroups(): void{
+    this.groupService.getGroups()
+      .subscribe(groups => this.groups = groups);
+  }
+
+
+
+
   constructor(
     private route: ActivatedRoute,
     private studentService: StudentService,
-    private location: Location
+    private location: Location,
+
+    private groupService: GroupService
   ) {}
 
   ngOnInit(): void {
     this.getStudent();
+    this.getGroups();
   }
 
   getStudent(): void {
