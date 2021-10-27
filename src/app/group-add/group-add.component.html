@@ -1,0 +1,10 @@
+<div>
+  <br>
+  <label for="new-group">Group name: </label>
+  <input id="new-group" #groupName />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button class="add-button" (click)="add(groupName.value); groupName.value=''; goBack()">
+    Add group
+  </button>
+</div>

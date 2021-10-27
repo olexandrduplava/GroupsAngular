@@ -10,23 +10,29 @@
   </li>
 </ul>
 
-<div>
-  <label for="student-firstName">Student firstName: </label>
-  <input id="student-firstName" #studentFirstName />
-  <label for="student-lastName">Student lastName: </label>
-  <input id="student-lastName" #studentLastName />
-
-  <div class="form-group">
-    <label for="power">Group: </label>
-    <select class="form-control" id="power" required  #studentGroupID>
-      <option *ngFor="let group of groups" [value]="group.id">{{group.title}}</option>
-    </select>
-  </div>
-  <br>
-
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button class="add-button" (click)="add(studentFirstName.value, studentLastName.value, +(studentGroupID.value))">
-    Add student
+<nav>
+  <button onclick="window.location.href='/students-add';" class="add-button">
+    Add Student
   </button>
-</div>
+</nav>
+
+<!--<div>-->
+<!--  <label for="student-firstName">Student firstName: </label>-->
+<!--  <input id="student-firstName" #studentFirstName />-->
+<!--  <label for="student-lastName">Student lastName: </label>-->
+<!--  <input id="student-lastName" #studentLastName />-->
+
+<!--  <div class="form-group">-->
+<!--    <label for="power">Group: </label>-->
+<!--    <select class="form-control" id="power" required  #studentGroupID>-->
+<!--      <option *ngFor="let group of groups" [value]="group.id">{{group.title}}</option>-->
+<!--    </select>-->
+<!--  </div>-->
+<!--  <br>-->
+
+<!--  &lt;!&ndash; (click) passes input value to add() and then clears the input &ndash;&gt;-->
+<!--  <button class="add-button" (click)="add(studentFirstName.value, studentLastName.value, +(studentGroupID.value))">-->
+<!--    Add student-->
+<!--  </button>-->
+<!--</div>-->
 

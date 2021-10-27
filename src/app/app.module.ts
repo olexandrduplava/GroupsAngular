@@ -12,6 +12,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {HttpClientModule} from "@angular/common/http";
 import { StudentsComponent } from './students/students.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
+import { GroupAddComponent } from './group-add/group-add.component';
+import { StudentAddComponent } from './student-add/student-add.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { StudentDetailComponent } from './student-detail/student-detail.componen
     MessagesComponent,
     DashboardComponent,
     StudentsComponent,
-    StudentDetailComponent
+    StudentDetailComponent,
+    GroupAddComponent,
+    StudentAddComponent
   ],
     imports: [
         BrowserModule,

@@ -28,6 +28,7 @@ export class StudentDetailComponent implements OnInit {
   }
 
 
+//TODO make update work fine with groups and display correct which group is now
 
 
   constructor(
