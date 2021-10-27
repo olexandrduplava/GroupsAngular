@@ -1,7 +1,17 @@
 <h2>Top Groups</h2>
-<div class="heroes-menu">
+<div class="groups-menu">
   <a *ngFor="let group of groups"
-  routerLink="/detail/{{group.id}}">
-    {{group.title}}
+      routerLink="/groups/{{group.id}}">
+      {{group.title}}
   </a>
 </div>
+<br>
+<h2>Top Students</h2>
+<div class="groups-menu">
+  <a *ngFor="let student of students"
+      routerLink="/students/{{student.id}}">
+      {{student.firstName}}
+  </a>
+</div>
+
+

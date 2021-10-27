@@ -33,7 +33,6 @@ export class GroupDetailComponent implements OnInit {
     this.location.back();
     }
 
-    //TODO update dont work
     update(): void {
       if(this.group){
         this.groupService.updateGroup(this.group)

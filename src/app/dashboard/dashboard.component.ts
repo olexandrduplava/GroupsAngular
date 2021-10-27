@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Group} from "../group/group";
 import {GroupService} from "../service/group.service";
+import {Student} from "../students/student";
+import {StudentService} from "../service/student.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -11,15 +13,23 @@ export class DashboardComponent implements OnInit {
 
   groups: Group[] = [];
 
-  constructor( private groupService: GroupService) { }
+  students: Student[] = [];
+
+  constructor( private groupService: GroupService, private studentService: StudentService) { }
 
   ngOnInit(): void {
     this.getGroups();
+    this.getStudents();
   }
 
   getGroups():void{
     this.groupService.getGroups()
       .subscribe(groups=>this.groups =groups.slice(0,3));
+  }
+
+  getStudents():void{
+    this.studentService.getStudents()
+      .subscribe(students=>this.students =students.slice(0,3));
   }
 
 }

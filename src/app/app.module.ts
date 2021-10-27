@@ -10,6 +10,8 @@ import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import {HttpClientModule} from "@angular/common/http";
+import { StudentsComponent } from './students/students.component';
+import { StudentDetailComponent } from './student-detail/student-detail.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import {HttpClientModule} from "@angular/common/http";
     GroupComponent,
     GroupDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    StudentsComponent,
+    StudentDetailComponent
   ],
     imports: [
         BrowserModule,

@@ -2,7 +2,7 @@
 
 <ul class="groups">
   <li *ngFor="let group of groups">
-    <a routerLink="/detail/{{group.id}}">
+    <a routerLink="/groups/{{group.id}}">
      <span class="badge">{{group.id}}</span> {{group.title}}
     </a>
     <button class="delete" title="delete hero"
@@ -10,11 +10,9 @@
   </li>
 </ul>
 
-
-
 <div>
-  <label for="new-hero">Group name: </label>
-  <input id="new-hero" #groupName />
+  <label for="new-group">Group name: </label>
+  <input id="new-group" #groupName />
 
   <!-- (click) passes input value to add() and then clears the input -->
   <button class="add-button" (click)="add(groupName.value); groupName.value=''">
