@@ -2,11 +2,9 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 import {Student} from "../students/student";
-import {STUDENTS} from "../students/mock-students";
 import {MessageService} from "./message.service";
 
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Group} from "../group/group";
 import {catchError, tap} from "rxjs/operators";
 
 @Injectable({
@@ -58,15 +56,12 @@ export class StudentService {
     );
   }
 
-
-
   updateStudent(student: Student): Observable<any> {
     return this.http.put(this.studentURL + `/${student.id}`, student, this.httpOptions).pipe(
       tap(_ => this.log(`updated student id=${student.id}`)),
       catchError(this.handleError<any>('updateStudent'))
     );
   }
-
 
   addStudent(student: Student): Observable<Student> {
     const url = `${this.studentURL}`;

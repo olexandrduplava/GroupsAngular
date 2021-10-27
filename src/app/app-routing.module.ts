@@ -9,11 +9,13 @@ import {StudentsComponent} from "./students/students.component";
 import {StudentDetailComponent} from "./student-detail/student-detail.component";
 import {GroupAddComponent} from "./group-add/group-add.component";
 import {StudentAddComponent} from "./student-add/student-add.component";
+import {GroupEditComponent} from "./group-edit/group-edit.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   {path: 'dashboard', component: DashboardComponent},
   {path: 'groups/:id', component: GroupDetailComponent},
+  {path: 'groups-edit/:id', component: GroupEditComponent},
   {path: 'groups', component: GroupComponent},
   {path: 'groups-add', component: GroupAddComponent},
   {path: 'students', component: StudentsComponent},

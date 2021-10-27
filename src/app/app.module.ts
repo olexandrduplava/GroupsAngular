@@ -14,6 +14,7 @@ import { StudentsComponent } from './students/students.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 import { GroupAddComponent } from './group-add/group-add.component';
 import { StudentAddComponent } from './student-add/student-add.component';
+import { GroupEditComponent } from './group-edit/group-edit.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { StudentAddComponent } from './student-add/student-add.component';
     StudentsComponent,
     StudentDetailComponent,
     GroupAddComponent,
-    StudentAddComponent
+    StudentAddComponent,
+    GroupEditComponent
   ],
     imports: [
         BrowserModule,

@@ -75,7 +75,7 @@ input {
 
 button.delete {
   position: absolute;
-  left: 210px;
+  left: 260px;
   top: 5px;
   background-color: white;
   color:  #525252;
@@ -84,6 +84,21 @@ button.delete {
 }
 
 button.delete:hover {
+  background-color: #525252;
+  color: white;
+}
+
+button.update {
+  position: absolute;
+  left: 180px;
+  top: 5px;
+  background-color: white;
+  color:  #525252;
+  font-size: 1.1rem;
+  padding: 1px 10px 3px 10px;
+}
+
+button.update:hover {
   background-color: #525252;
   color: white;
 }

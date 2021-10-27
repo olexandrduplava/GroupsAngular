@@ -3,6 +3,8 @@ import { Group} from "../group/group";
 import {ActivatedRoute} from "@angular/router";
 import {Location} from "@angular/common";
 import {GroupService} from "../service/group.service";
+import {Student} from "../students/student";
+import {StudentService} from "../service/student.service";
 
 @Component({
   selector: 'app-group-detail',
@@ -12,15 +14,18 @@ import {GroupService} from "../service/group.service";
 export class GroupDetailComponent implements OnInit {
 
   group: Group | undefined;
+  students: Student[] = [];
 
   constructor(
     private route: ActivatedRoute,
     private groupService: GroupService,
-    private location: Location
+    private location: Location,
+    private studentService: StudentService
   ) { }
 
   ngOnInit(): void {
     this.getGroup();
+    this.getStudents();
   }
 
     getGroup(): void{
@@ -33,11 +38,10 @@ export class GroupDetailComponent implements OnInit {
     this.location.back();
     }
 
-    update(): void {
-      if(this.group){
-        this.groupService.updateGroup(this.group)
-          .subscribe(() => this.goBack());
-      }
-    }
+    getStudents(): void {
+    this.studentService.getStudents()
+      .subscribe(students => this.students = students);
+  }
+
 }
 

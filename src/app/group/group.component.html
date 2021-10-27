@@ -5,24 +5,15 @@
     <a routerLink="/groups/{{group.id}}">
      <span class="badge">{{group.id}}</span> {{group.title}}
     </a>
+    <button routerLink="/groups-edit/{{group.id}}" class="update" title="delete hero">Update</button>
     <button class="delete" title="delete hero"
             (click)="delete(group)">Delete</button>
+
   </li>
 </ul>
 
 <nav>
-  <button onclick="window.location.href='/groups-add';" class="add-button">
+  <button routerLink="/groups-add" class="add-button">
     Add Group
   </button>
 </nav>
-
-<!--<div>-->
-<!--  <label for="new-group">Group name: </label>-->
-<!--  <input id="new-group" #groupName />-->
-
-<!--  &lt;!&ndash; (click) passes input value to add() and then clears the input &ndash;&gt;-->
-<!--  <button class="add-button" (click)="add(groupName.value); groupName.value=''">-->
-<!--    Add group-->
-<!--  </button>-->
-<!--</div>-->
-

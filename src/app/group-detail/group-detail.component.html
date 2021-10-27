@@ -1,12 +1,14 @@
 <div *ngIf="group">
 
   <h2>{{group.title | uppercase}} Details</h2>
-  <div><span>id: </span>{{group.id}}</div>
-  <div>
-    <label for="group-name">Group title: </label>
-    <input id="group-name" [(ngModel)]="group.title" placeholder="group">
-    <br>
-    <button (click)="update()">Update</button>
-  </div>
-<button (click)="goBack()">go back</button>
+
+  <ul class="students">
+    <li *ngFor="let student of students">
+      <a>
+        <span class="badge">{{student.id}}</span> {{student.firstName}}
+      </a>
+    </li>
+  </ul>
+
+<button (click)="goBack()" class="add-button">go back</button>
 </div>
