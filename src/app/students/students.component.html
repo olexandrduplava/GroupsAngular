@@ -1,15 +1,18 @@
 <h2>My Students</h2>
 
-<table class="table table-striped">
+<table class="styled-table">
   <caption>Students result</caption>
-  <tr>
-    <th id="id">ID</th>
-    <th id="firstName">First Name</th>
-    <th id="lastName">Last Name</th>
-    <th id="averageRank">Average Rank</th>
-    <th id="group">Group</th>
-    <th colspan="2" id="actions">Actions</th>
-  </tr>
+  <thead>
+    <tr>
+      <th id="id">ID</th>
+      <th id="firstName">First Name</th>
+      <th id="lastName">Last Name</th>
+      <th id="averageRank">Average Rank</th>
+      <th id="group">Group</th>
+      <th colspan="2" id="actions">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
   <tr *ngFor="let student of students">
     <td>{{student.id}}</td>
     <td>{{student.firstName}}</td>

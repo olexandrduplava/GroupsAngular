@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Group} from "./group";
 import {GroupService} from "../service/group.service";
+import {StudentService} from "../service/student.service";
+import {Student} from "../students/student";
 
 @Component({
   selector: 'app-group',
@@ -10,11 +12,21 @@ import {GroupService} from "../service/group.service";
 export class GroupComponent implements OnInit {
 
   groups: Group[] = [];
+  students: Student[] = [];
 
-  constructor(private groupService: GroupService) { }
+  constructor(
+    private groupService: GroupService,
+    private studentService: StudentService
+  ) { }
 
   ngOnInit(): void {
     this.getGroups()
+    this.getStudents()
+  }
+
+  getStudents(): void {
+    this.studentService.getStudents()
+      .subscribe(students => this.students = students);
   }
 
   getGroups(): void{

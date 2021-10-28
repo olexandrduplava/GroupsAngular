@@ -1,104 +1,20 @@
-/* HeroesComponent's private CSS styles */
-.groups {
-  margin: 0 0 2em 0;
-  list-style-type: none;
-  padding: 0;
-  width: 15em;
+
+table {
+  border-collapse: collapse;
 }
 
-input {
-  display: block;
-  width: 15%;
-  padding: .5rem;
-  margin: 1rem 0;
-  box-sizing: border-box;
+td{
+  border: 1px solid #999;
+  padding: 0.5rem;
+  text-align: left;
 }
 
-.groups li {
-  position: relative;
-  cursor: pointer;
-}
-
-.groups li:hover {
-  left: .1em;
-}
-
-.groups a {
-  color: #333;
-  text-decoration: none;
-  background-color: #EEE;
-  margin: .5em;
-  padding: .3em 0;
-  height: 1.6em;
-  border-radius: 4px;
-  display: block;
-  width: 100%;
-}
-
-.groups a:hover {
-  color: #2c3a41;
-  background-color: #e6e6e6;
-}
-
-.groups a:active {
-  background-color: #525252;
-  color: #fafafa;
-}
-
-.groups .badge {
-  display: inline-block;
-  font-size: small;
+th {
+  background-color: gray;
   color: white;
-  padding: 0.8em 0.7em 0 0.7em;
-  background-color:#405061;
-  line-height: 1em;
-  position: relative;
-  left: -1px;
-  top: -4px;
-  height: 1.8em;
-  min-width: 16px;
-  text-align: right;
-  margin-right: .8em;
-  border-radius: 4px 0 0 4px;
+  padding: 0.5rem;
 }
 
-.add-button {
-  padding: .5rem 1.5rem;
-  font-size: 1rem;
-  margin-bottom: 2rem;
-}
-
-.add-button:hover {
-  color: white;
-  background-color: #42545C;
-}
-
-button.delete {
-  position: absolute;
-  left: 260px;
-  top: 5px;
-  background-color: white;
-  color:  #525252;
-  font-size: 1.1rem;
-  padding: 1px 10px 3px 10px;
-}
-
-button.delete:hover {
-  background-color: #525252;
-  color: white;
-}
-
-button.update {
-  position: absolute;
-  left: 180px;
-  top: 5px;
-  background-color: white;
-  color:  #525252;
-  font-size: 1.1rem;
-  padding: 1px 10px 3px 10px;
-}
-
-button.update:hover {
-  background-color: #525252;
-  color: white;
+body {
+  font: normal medium/1.4 sans-serif;
 }
