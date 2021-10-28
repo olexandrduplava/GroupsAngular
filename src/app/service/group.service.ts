@@ -6,7 +6,7 @@ import {Observable, of} from "rxjs";
 import {MessageService} from "./message.service";
 
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {catchError, map, tap} from "rxjs/operators";
+import {catchError, tap} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'

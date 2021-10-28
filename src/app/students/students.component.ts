@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Student} from "./student";
 import {StudentService} from "../service/student.service";
 import {Group} from "../group/group";
@@ -15,18 +15,17 @@ export class StudentsComponent implements OnInit {
 
   groups: Group[] = [];
 
-
-
   constructor(private studentService: StudentService,
               private groupService: GroupService
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.getStudents();
     this.getGroups();
   }
 
-  getGroups(): void{
+  getGroups(): void {
     this.groupService.getGroups()
       .subscribe(groups => this.groups = groups);
   }
@@ -37,7 +36,7 @@ export class StudentsComponent implements OnInit {
   }
 
   delete(student: Student): void {
-    this.students = this.students.filter(h=> h!== student);
+    this.students = this.students.filter(h => h !== student);
     this.studentService.deleteStudent(student.id!).subscribe();
   }
 

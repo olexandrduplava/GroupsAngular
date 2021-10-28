@@ -5,9 +5,7 @@ import {Location} from "@angular/common";
 import {StudentService} from "../service/student.service";
 import {Group} from "../group/group";
 
-
 import {GroupService} from "../service/group.service";
-
 
 @Component({
   selector: 'app-student-detail',
@@ -17,19 +15,12 @@ import {GroupService} from "../service/group.service";
 export class StudentDetailComponent implements OnInit {
 
   student: Student | undefined;
-
-
   groups: Group[] = [];
-
 
   getGroups(): void{
     this.groupService.getGroups()
       .subscribe(groups => this.groups = groups);
   }
-
-
-//TODO make update work fine with groups and display correct which group is now
-
 
   constructor(
     private route: ActivatedRoute,
@@ -52,14 +43,6 @@ export class StudentDetailComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
-  }
-
-  update(): void {
-    console.log(this.student)
-    if(this.student){
-      this.studentService.updateStudent(this.student)
-        .subscribe(() => this.goBack());
-    }
   }
 
   update1(firstName: string, lastName: string, averageRank: number, groupId: number): void {

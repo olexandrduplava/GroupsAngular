@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Group} from "./group";
-
 import {GroupService} from "../service/group.service";
 
 @Component({
@@ -22,7 +21,6 @@ export class GroupComponent implements OnInit {
     this.groupService.getGroups()
       .subscribe(groups => this.groups = groups);
   }
-
 
   add(title: string): void {
       title = title.trim();

@@ -12,8 +12,10 @@ export class GroupAddComponent implements OnInit {
 
   groups: Group[] = [];
 
-  constructor(private groupService: GroupService,
-              private location: Location) { }
+  constructor(
+    private groupService: GroupService,
+    private location: Location
+  ) { }
 
   ngOnInit(): void {
     this.getGroups()

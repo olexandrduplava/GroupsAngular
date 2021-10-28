@@ -5,7 +5,6 @@ import {Location} from "@angular/common";
 import {GroupService} from "../service/group.service";
 import {Student} from "../students/student";
 import {StudentService} from "../service/student.service";
-import {filter} from "rxjs/operators";
 
 @Component({
   selector: 'app-group-detail',
@@ -28,12 +27,11 @@ export class GroupDetailComponent implements OnInit {
   ngOnInit(): void {
     this.getGroup();
     this.getStudents();
-
   }
 
     getGroup(): void{
-      var idGroup = Number(this.route.snapshot.paramMap.get('id'));
-      this.groupService.getGroup(idGroup!)
+      let idGroup = Number(this.route.snapshot.paramMap.get('id'));
+      this.groupService.getGroup(idGroup)
         .subscribe((groupData) => {this.group = groupData;})
     }
 
@@ -47,14 +45,13 @@ export class GroupDetailComponent implements OnInit {
   }
 
   delete(student: Student) {
-
     let student1:Student = {id:student.id,
       firstName: student.firstName,
       lastName: student.lastName,
       averageRank: student.averageRank,
       group: undefined}
-    console.log("update1: student let")
-    console.log(student)
+    console.log("update1: student let");
+    console.log(student);
 
     this.studentService.updateStudent(student1)
       .subscribe(() => this.goBack());
