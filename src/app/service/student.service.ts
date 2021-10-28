@@ -48,6 +48,8 @@ export class StudentService {
     };
   }
 
+
+  //TODO maybe make new getStudnet(group) and show student group to group page?
   getStudent(id: number): Observable<Student>{
     const url = `${this.studentURL}/${id}`;
     return this.http.get<Student>(url).pipe(

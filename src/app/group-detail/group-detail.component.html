@@ -3,7 +3,7 @@
   <h2>{{group.title | uppercase}} Details</h2>
 
   <ul class="students">
-    <li *ngFor="let student of students">
+    <li *ngFor="let student of group!.students">
       <a>
         <span class="badge">{{student.id}}</span> {{student.firstName}}
       </a>
