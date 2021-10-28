@@ -38,7 +38,6 @@ export class StudentAddComponent implements OnInit {
     console.log(student,groupId)
 
     this.studentService.addStudent(student)
-      // this.studentService.addStudent({ firstName, lastName, this.groups[0] } as Student)
       .subscribe(group => {
         this.students.push(group);
       });

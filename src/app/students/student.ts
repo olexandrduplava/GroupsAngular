@@ -5,5 +5,5 @@ export interface Student {
   firstName: string;
   lastName: string;
   averageRank?: number;
-  group: Group;
+  group?: Group;
 }

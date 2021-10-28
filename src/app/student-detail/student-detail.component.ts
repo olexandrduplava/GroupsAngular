@@ -61,6 +61,7 @@ export class StudentDetailComponent implements OnInit {
         .subscribe(() => this.goBack());
     }
   }
+
   update1(firstName: string, lastName: string, averageRank: number, groupId: number): void {
     console.log("update1: Enter")
     console.log(this.student)

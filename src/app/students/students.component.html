@@ -1,18 +1,46 @@
 <h2>My Students</h2>
 
-<ul class="students">
-  <li *ngFor="let student of students">
-    <a routerLink="/students/{{student.id}}">
-      <span class="badge">{{student.id}}</span> {{student.firstName}}
-    </a>
-    <button class="delete" title="delete student"
-            (click)="delete(student)">Delete</button>
-  </li>
-</ul>
+<!--<ul class="students">-->
+<!--  <li *ngFor="let student of students">-->
+<!--    <a routerLink="/students/{{student.id}}">-->
+<!--      <span class="badge">{{student.id}}</span> {{student.firstName}}-->
+<!--    </a>-->
+<!--    <button class="delete" title="delete student"-->
+<!--            (click)="delete(student)">Delete</button>-->
+<!--  </li>-->
+<!--</ul>-->
 
-<nav>
+<!--<nav>-->
+<!--  <button routerLink="/students-add" class="add-button">-->
+<!--    Add Student-->
+<!--  </button>-->
+<!--</nav>-->
+
+<table class="table table-striped">
+  <tr>
+    <th>ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Average Rank</th>
+    <th>Group</th> <th colspan="2">Actions</th>
+  </tr>
+  <tr *ngFor="let student of students">
+    <td>{{student.id}}</td>
+    <td>{{student.firstName}}</td>
+    <td>{{student.lastName}}</td>
+    <td>{{student.averageRank}}</td>
+    <td>{{student.group?.title}}</td>
+    <td>
+      <button title="delete student" routerLink="/students/{{student.id}}">Update</button>
+    </td>
+    <td>
+      <button title="delete student"(click)="delete(student)">Delete</button>
+    </td>
+  </tr>
+</table>
+
+  <br>
   <button routerLink="/students-add" class="add-button">
     Add Student
   </button>
-</nav>
 

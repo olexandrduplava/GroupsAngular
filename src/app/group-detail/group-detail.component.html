@@ -7,6 +7,8 @@
       <a>
         <span class="badge">{{student.id}}</span> {{student.firstName}}
       </a>
+      <button class="delete" title="delete student"
+              (click)="delete(student)">Delete </button>
     </li>
   </ul>
 

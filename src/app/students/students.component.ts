@@ -18,7 +18,8 @@ export class StudentsComponent implements OnInit {
 
 
   constructor(private studentService: StudentService,
-              private groupService: GroupService) { }
+              private groupService: GroupService
+  ) { }
 
   ngOnInit(): void {
     this.getStudents();
@@ -39,4 +40,5 @@ export class StudentsComponent implements OnInit {
     this.students = this.students.filter(h=> h!== student);
     this.studentService.deleteStudent(student.id!).subscribe();
   }
+
 }

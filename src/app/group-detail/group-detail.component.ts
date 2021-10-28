@@ -16,6 +16,7 @@ export class GroupDetailComponent implements OnInit {
 
   group: Group | undefined;
   students: Student[] = [];
+  student: Student | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -31,16 +32,9 @@ export class GroupDetailComponent implements OnInit {
   }
 
     getGroup(): void{
-      // const id = Number(this.route.snapshot.paramMap.get('id'));
-
       var idGroup = Number(this.route.snapshot.paramMap.get('id'));
-
       this.groupService.getGroup(idGroup!)
         .subscribe((groupData) => {this.group = groupData;})
-
-
-      // this.groupService.getGroup(id)
-      //   .subscribe(group=>this.group=group);
     }
 
     goBack(): void{
@@ -52,5 +46,18 @@ export class GroupDetailComponent implements OnInit {
       .subscribe(students => this.students = students);
   }
 
+  delete(student: Student) {
+
+    let student1:Student = {id:student.id,
+      firstName: student.firstName,
+      lastName: student.lastName,
+      averageRank: student.averageRank,
+      group: undefined}
+    console.log("update1: student let")
+    console.log(student)
+
+    this.studentService.updateStudent(student1)
+      .subscribe(() => this.goBack());
+  }
 }
 
