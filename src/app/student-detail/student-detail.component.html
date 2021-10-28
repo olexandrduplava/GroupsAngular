@@ -18,7 +18,7 @@
     <div class="form-group">
       <label for="power">Group: </label>
       <select class="form-control" id="power" required #studentGroupID>
-        <option *ngFor="let group of groups" [value]="group.id">{{group.title}}</option>
+        <option *ngFor="let group of groups" [value]="group.id">{{student.group?.title}}</option>
       </select>
     </div>
     <br>
