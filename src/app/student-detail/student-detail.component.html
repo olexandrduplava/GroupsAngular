@@ -4,26 +4,26 @@
   <div>
 
     <label for="student-firstName">Student firstName: </label>
-    <input id="student-firstName" [(ngModel)]="student.firstName" placeholder="firstName"/>
+    <input id="student-firstName" [(ngModel)]="student.firstName" placeholder="firstName" #studentFirstName/>
     <br>
 
     <label for="student-lastName">Student lastName: </label>
-    <input id="student-lastName" [(ngModel)]="student.lastName" placeholder="lastName"/>
+    <input id="student-lastName" [(ngModel)]="student.lastName" placeholder="lastName" #studentLastName/>
     <br>
 
     <label for="student-averageRank">Student averageRank: </label>
-    <input id="student-averageRank" [(ngModel)]="student.averageRank" placeholder="averageRank"/>
+    <input id="student-averageRank" [(ngModel)]="student.averageRank" placeholder="averageRank" #studentAverageRank/>
     <br>
 
     <div class="form-group">
       <label for="power">Group: </label>
-      <select class="form-control" id="power" required>
-        <option *ngFor="let group of groups" [value]="group.id">{{student.group.title}}</option>
+      <select class="form-control" id="power" required #studentGroupID>
+        <option *ngFor="let group of groups" [value]="group.id">{{group.title}}</option>
       </select>
     </div>
     <br>
 
-    <button (click)="update()">Update</button>
+    <button (click)="update1(studentFirstName.value, studentLastName.value, +(studentAverageRank.value), +(studentGroupID.value)); goBack()">Update</button>
   </div>
   <button (click)="goBack()">go back</button>
 </div>

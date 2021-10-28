@@ -55,9 +55,22 @@ export class StudentDetailComponent implements OnInit {
   }
 
   update(): void {
+    console.log(this.student)
     if(this.student){
       this.studentService.updateStudent(this.student)
         .subscribe(() => this.goBack());
     }
   }
+  update1(firstName: string, lastName: string, averageRank: number, groupId: number): void {
+    console.log("update1: Enter")
+    console.log(this.student)
+    if(!firstName && !lastName) {return;}
+    let student:Student = {id:this.student?.id, firstName:firstName, lastName:lastName, averageRank:averageRank, group:this.groups.find(h=> h.id === groupId) as Group}
+    console.log("update1: student let")
+    console.log(student,groupId)
+
+    this.studentService.updateStudent(student)
+      .subscribe(() => this.goBack());
+  }
+
 }

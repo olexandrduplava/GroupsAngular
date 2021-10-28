@@ -35,21 +35,6 @@ export class StudentsComponent implements OnInit {
       .subscribe(students => this.students = students);
   }
 
-  add(firstName: string, lastName: string, groupId: number): void {
-    firstName = firstName.trim();
-    lastName = lastName.trim();
-    if(!firstName && !lastName) {return;}
-
-    let student:Student = { firstName:firstName, lastName:lastName, group:this.groups.find(h=> h.id === groupId) as Group}
-    console.log(student,groupId)
-
-    this.studentService.addStudent(student)
-    // this.studentService.addStudent({ firstName, lastName, this.groups[0] } as Student)
-      .subscribe(group => {
-        this.students.push(group);
-      });
-  }
-
   delete(student: Student): void {
     this.students = this.students.filter(h=> h!== student);
     this.studentService.deleteStudent(student.id!).subscribe();
