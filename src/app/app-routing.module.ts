@@ -12,8 +12,8 @@ import {StudentAddComponent} from "./student-add/student-add.component";
 import {GroupEditComponent} from "./group-edit/group-edit.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  {path: 'dashboard', component: DashboardComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {path: 'home', component: DashboardComponent},
   {path: 'groups/:id', component: GroupDetailComponent},
   {path: 'groups-edit/:id', component: GroupEditComponent},
   {path: 'groups', component: GroupComponent},

@@ -15,7 +15,7 @@
     <td>{{student.firstName}}</td>
     <td>{{student.lastName}}</td>
     <td>{{student.averageRank}}</td>
-    <td>{{student.group?.title}}</td>
+      <td><a routerLink="/groups/{{student.group?.id}}">{{student.group?.title}}</a></td>
     <td>
       <button title="delete student" routerLink="/students/{{student.id}}">Update</button>
     </td>

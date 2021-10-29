@@ -2,23 +2,23 @@
 <div>
   <br>
   <label for="student-firstName">Student firstName: </label>
-  <input id="student-firstName" #studentFirstName required/>
+  <input id="student-firstName" name="firstName" #studentFirstName required minlength="4"/>
   <label for="student-lastName">Student lastName: </label>
-  <input id="student-lastName" #studentLastName required />
+  <input id="student-lastName" #studentLastName required minlength="4"/>
 
   <div class="form-group">
     <label for="power">Group: </label>
-    <select class="form-control" id="power" required  #studentGroupID>
+    <select  id="power" required  #studentGroupID>
       <option *ngFor="let group of groups" [value]="group.id">{{group.title}}</option>
     </select>
   </div>
   <br>
 
   <!-- (click) passes input value to add() and then clears the input -->
-  <button class="add-button" (click)="add(studentFirstName.value, studentLastName.value, +(studentGroupID.value)); goBack()">
-    Add student
+  <button (click)="add(studentFirstName.value, studentLastName.value, +(studentGroupID.value)); goBack()">
+    Add Student
   </button>
 
-  <br>
+  <br><br>
   <button (click)="goBack()">Go Back</button>
 </div>

@@ -11,18 +11,19 @@
     <br>
 
     <label for="student-averageRank">Student averageRank: </label>
-    <input id="student-averageRank" [(ngModel)]="student.averageRank" placeholder="averageRank" #studentAverageRank/>
+    <input id="student-averageRank" [(ngModel)]="student.averageRank" placeholder="averageRank" #studentAverageRank
+           type=number step="0.1" min="0" max="5"/>
     <br>
 
     <div class="form-group">
       <label for="power">Group: </label>
-      <select class="form-control" id="power" required #studentGroupID>
+      <select id="power" required #studentGroupID>
         <option *ngFor="let group of groups" [value]="group.id">{{group.title}}</option>
       </select>
     </div>
-    <br>
 
     <button (click)="update1(studentFirstName.value, studentLastName.value, +(studentAverageRank.value), +(studentGroupID.value)); goBack()">Update</button>
   </div>
+  <br>
   <button (click)="goBack()">go back</button>
 </div>

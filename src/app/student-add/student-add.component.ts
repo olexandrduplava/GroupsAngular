@@ -13,7 +13,6 @@ import {Location} from "@angular/common";
 export class StudentAddComponent implements OnInit {
 
   groups: Group[] = [];
-
   students: Student[] = [];
 
   constructor(private studentService: StudentService,

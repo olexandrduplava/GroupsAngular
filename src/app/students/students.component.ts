@@ -16,7 +16,7 @@ export class StudentsComponent implements OnInit {
   groups: Group[] = [];
 
   constructor(private studentService: StudentService,
-              private groupService: GroupService
+              private groupService: GroupService,
   ) {
   }
 
