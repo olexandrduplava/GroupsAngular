@@ -1,10 +1,8 @@
-<h2>My Students</h2>
 
 <table class="styled-table">
-  <caption>Students result</caption>
+  <caption><h2>Students result</h2></caption>
   <thead>
     <tr>
-      <th id="id">ID</th>
       <th id="firstName">First Name</th>
       <th id="lastName">Last Name</th>
       <th id="averageRank">Average Rank</th>
@@ -14,7 +12,6 @@
   </thead>
   <tbody>
   <tr *ngFor="let student of students">
-    <td>{{student.id}}</td>
     <td>{{student.firstName}}</td>
     <td>{{student.lastName}}</td>
     <td>{{student.averageRank}}</td>

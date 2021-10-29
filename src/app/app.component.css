@@ -1,21 +1,47 @@
 /* AppComponent's private CSS styles */
-h1 {
-  margin-bottom: 0;
-}
-nav a {
-  padding: 1rem;
-  text-decoration: none;
-  margin-top: 10px;
-  display: inline-block;
-  background-color: #e8e8e8;
-  color: #3d3d3d;
-  border-radius: 4px;
+/*h1 {*/
+/*  margin-bottom: 0;*/
+/*}*/
+/*nav a {*/
+/*  padding: 1rem;*/
+/*  text-decoration: none;*/
+/*  margin-top: 10px;*/
+/*  display: inline-block;*/
+/*  background-color: #e8e8e8;*/
+/*  color: #3d3d3d;*/
+/*  border-radius: 4px;*/
+/*}*/
+
+/*nav a:hover {*/
+/*  color: white;*/
+/*  background-color: #42545C;*/
+/*}*/
+/*nav a.active {*/
+/*  background-color: black;*/
+/*}*/
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
 }
 
-nav a:hover {
-  color: white;
-  background-color: #42545C;
+li {
+  float: left;
 }
-nav a.active {
-  background-color: black;
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
 }

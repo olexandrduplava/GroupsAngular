@@ -1,23 +1,17 @@
 
-<h2>My Groups</h2>
-
 <table class="styled-table">
-  <caption>Groups result</caption>
+  <caption><h2>Groups result</h2></caption>
   <thead>
   <tr>
-    <th id="id">ID</th>
     <th id="firstName">Title</th>
-    <th id="amountStudents">Students</th>
     <th colspan="2" id="actions">Actions</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let group of groups">
-    <td>{{group.id}}</td>
     <a routerLink="/groups/{{group.id}}">
       <td>{{group.title}}</td>
     </a>
-    <td>{{group.students?.length}}</td>
     <td>
       <button title="update group" routerLink="/groups-edit/{{group.id}}">Update</button>
     </td>
