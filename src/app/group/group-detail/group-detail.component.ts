@@ -1,10 +1,10 @@
 import { Component, OnInit} from '@angular/core';
-import { Group} from "../group/group";
+import { Group} from "../group";
 import {ActivatedRoute} from "@angular/router";
 import {Location} from "@angular/common";
-import {GroupService} from "../service/group.service";
-import {Student} from "../students/student";
-import {StudentService} from "../service/student.service";
+import {GroupService} from "../../services/group-service/group.service";
+import {Student} from "../../students/student";
+import {StudentService} from "../../services/student-service/student.service";
 
 @Component({
   selector: 'app-group-detail',
@@ -44,17 +44,5 @@ export class GroupDetailComponent implements OnInit {
       .subscribe(students => this.students = students);
   }
 
-  delete(student: Student) {
-    let student1:Student = {id:student.id,
-      firstName: student.firstName,
-      lastName: student.lastName,
-      averageRank: student.averageRank,
-      group: undefined}
-    console.log("update1: student let");
-    console.log(student);
-
-    this.studentService.updateStudent(student1)
-      .subscribe(() => this.goBack());
-  }
 }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Group} from "../group/group";
-import {GroupService} from "../service/group.service";
+import {Group} from "../group";
+import {GroupService} from "../../services/group-service/group.service";
 import {Location} from "@angular/common";
 
 @Component({

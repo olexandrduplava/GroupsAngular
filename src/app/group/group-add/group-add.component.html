@@ -1,7 +1,7 @@
 <div>
   <br>
   <label for="new-group">Group name: </label>
-  <input id="new-group" #groupName  required/>
+  <input id="new-group" #groupName  required />
   <!-- (click) passes input value to add() and then clears the input -->
   <br><br>
   <button (click)="add(groupName.value); groupName.value=''; goBack()">

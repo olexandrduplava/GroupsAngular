@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
-import {Student} from "../students/student";
-import {MessageService} from "./message.service";
+import {Student} from "../../students/student";
+import {MessageService} from "../message-service/message.service";
 
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {catchError, tap} from "rxjs/operators";
+import {AppSettings} from "../../constants/AppSettings";
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentService {
 
-  private studentURL = 'http://localhost:8090/student';
+  private studentURL: string=`${AppSettings.Main_Url}/student`;
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })

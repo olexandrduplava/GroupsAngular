@@ -1,19 +1,25 @@
 import { Injectable } from '@angular/core';
 
-import { Group} from "../group/group";
+import { Group} from "../../group/group";
 
 import {Observable, of} from "rxjs";
-import {MessageService} from "./message.service";
+import {MessageService} from "../message-service/message.service";
 
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {catchError, tap} from "rxjs/operators";
+
+import {AppSettings} from "../../constants/AppSettings";
 
 @Injectable({
   providedIn: 'root'
 })
 export class GroupService {
 
-  private groupsUrl = 'http://localhost:8090/group';
+  private groupsUrl: string=`${AppSettings.Main_Url}/group`;
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 
   constructor(
     private messageService: MessageService,
@@ -53,9 +59,6 @@ export class GroupService {
     );
   }
 
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
 
   updateGroup(group: Group): Observable<any> {
     return this.http.put(this.groupsUrl + `/${group.id}`, group, this.httpOptions).pipe(

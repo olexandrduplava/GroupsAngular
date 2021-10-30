@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {GroupService} from "../service/group.service";
+import {GroupService} from "../../services/group-service/group.service";
 import {Location} from "@angular/common";
-import {Group} from "../group/group";
+import {Group} from "../group";
 
 @Component({
   selector: 'app-group-edit',

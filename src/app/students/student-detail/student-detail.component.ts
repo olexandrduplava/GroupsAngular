@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {Student} from "../students/student";
+import {Student} from "../student";
 import {ActivatedRoute} from "@angular/router";
 import {Location} from "@angular/common";
-import {StudentService} from "../service/student.service";
-import {Group} from "../group/group";
+import {StudentService} from "../../services/student-service/student.service";
+import {Group} from "../../group/group";
 
-import {GroupService} from "../service/group.service";
+import {GroupService} from "../../services/group-service/group.service";
 
 @Component({
   selector: 'app-student-detail',

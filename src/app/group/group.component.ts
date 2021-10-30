@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Group} from "./group";
-import {GroupService} from "../service/group.service";
-import {StudentService} from "../service/student.service";
+import {GroupService} from "../services/group-service/group.service";
+import {StudentService} from "../services/student-service/student.service";
 import {Student} from "../students/student";
 
 @Component({

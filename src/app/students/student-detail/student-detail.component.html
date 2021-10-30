@@ -3,11 +3,11 @@
   <div>
 
     <label for="student-firstName">Student firstName: </label>
-    <input id="student-firstName" [(ngModel)]="student.firstName" placeholder="firstName" #studentFirstName/>
+    <input id="student-firstName" [(ngModel)]="student.firstName" placeholder="firstName" #studentFirstName maxlength="15"/>
     <br>
 
     <label for="student-lastName">Student lastName: </label>
-    <input id="student-lastName" [(ngModel)]="student.lastName" placeholder="lastName" #studentLastName/>
+    <input id="student-lastName" [(ngModel)]="student.lastName" placeholder="lastName" #studentLastName maxlength="15"/>
     <br>
 
     <label for="student-averageRank">Student averageRank: </label>
